@@ -18,6 +18,9 @@ class Student(models.Model):
     def __str__(self):
         return '<Student: {}>'.format(self.name)
 
+    @property
+    def sex_show(self):
+        return dict(self.sexItems)[self.sex]
     @classmethod
     def get_all(cls):
         return cls.objects.all()
